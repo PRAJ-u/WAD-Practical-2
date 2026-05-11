@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login App</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <!-- jQuery Mobile -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+
+<!-- Login Page -->
+<div data-role="page" id="login">
+
+    <div data-role="header">
+        <h1>Login Page</h1>
+    </div>
+
+    <div data-role="content">
+        <label for="username">Username:</label>
+        <input type="text" id="username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+
+        <a href="#" data-role="button" id="loginBtn">Login</a>
+    </div>
+
+</div>
+
+<!-- Success Page -->
+<div data-role="page" id="success">
+
+    <div data-role="header">
+        <h1>Welcome</h1>
+    </div>
+
+    <div data-role="content">
+        <h3>Login Successful!</h3>
+    </div>
+
+</div>
+
+<script>
+$(document).on("tap", "#loginBtn", function() {
+    var user = $("#username").val();
+    var pass = $("#password").val();
+
+    if(user === "admin" && pass === "1234") {
+        $.mobile.changePage("#success");
+    } else {
+        alert("Invalid Username or Password");
+    }
+});
+</script>
+
+</body>
+</html>
