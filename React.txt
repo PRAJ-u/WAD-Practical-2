@@ -1,0 +1,38 @@
+//REACT                                                                                     import { useState } from "react";
+
+function App() {
+  const [msg, setMsg] = useState("");
+
+  const login = (e) => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const pass = e.target.pass.value;
+
+    setMsg(
+      email === "admin@gmail.com" && pass === "123"
+        ? "Login Successful"
+        : "Wrong Email or Password"
+    );
+  };
+
+  return (
+    <center>
+      <h2>Login</h2>
+
+      <form onSubmit={login}>
+        <input type="email" name="email" placeholder="Email" />
+        <br /><br />
+
+        <input type="password" name="pass" placeholder="Password" />
+        <br /><br />
+
+        <button>Login</button>
+      </form>
+
+      <h3>{msg}</h3>
+    </center>
+  );
+}
+
+export default App;
