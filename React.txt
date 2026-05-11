@@ -1,4 +1,12 @@
-//REACT                                                                                     import { useState } from "react";
+//REACT 
+//node -v
+//npm -v 
+//npx create-react-app my-react-app
+//cd my-react-app
+//npm start
+
+//-src-app.js
+import { useState } from "react";
 
 function App() {
   const [msg, setMsg] = useState("");
